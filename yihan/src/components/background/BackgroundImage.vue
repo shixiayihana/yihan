@@ -7,7 +7,16 @@ const { src: bgSrc, failed: bgFailed, advance: nextBg } = useImageFallback('back
 </script>
 
 <template>
-  <div class="pointer-events-none fixed inset-0 z-0 overflow-hidden" aria-hidden="true">
+  <!--
+    宽度用 100vw（w-screen）而不是 inset-x-0：
+    页面高度不同会让纵向滚动条出现/消失，滚动条会占用视口宽度，
+    若用 inset-x-0 背景容器会跟着变窄，object-cover 就会重新缩放，
+    表现为切页时背景图“动了一下”。100vw 始终包含滚动条宽度，缩放保持稳定。
+  -->
+  <div
+    class="pointer-events-none fixed inset-y-0 left-0 z-0 w-screen overflow-hidden"
+    aria-hidden="true"
+  >
     <img
       v-if="!bgFailed"
       :src="bgSrc"

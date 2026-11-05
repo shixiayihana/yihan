@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { Search, Headphones, Sun, Moon, Monitor, Menu } from '@lucide/vue'
+import { Headphones, Sun, Moon, Monitor, Menu } from '@lucide/vue'
 import { useThemeStore } from '@/stores/theme'
 import { useUiStore } from '@/stores/ui'
 import { useClickOutside } from '@/composables/useClickOutside'
@@ -31,10 +31,11 @@ const themeIcon = computed(() => {
 
 <template>
   <div class="glass-pill flex items-center gap-1 px-2 py-1.5">
-    <!-- 搜索（占位） -->
+    <!-- 搜索暂未启用，恢复时取消注释并重新引入 Search 图标
     <button class="icon-btn" type="button" aria-label="搜索" title="搜索（开发中）">
       <Search :size="18" />
     </button>
+    -->
 
     <!-- 音乐播放器 -->
     <div ref="musicMenuRef" class="relative">
