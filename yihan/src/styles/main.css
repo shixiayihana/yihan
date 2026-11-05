@@ -33,6 +33,16 @@
   /* 播放器强调色 */
   --accent: #3b82f6;
   --accent-soft: rgba(59, 130, 246, 0.14);
+  /* 图表第二色（PB 折线） */
+  --accent-2: #7c3aed;
+
+  /* 数据状态色（估值百分位） */
+  --success: #16a34a;
+  --warning: #d97706;
+  --danger: #dc2626;
+  --success-soft: rgba(22, 163, 74, 0.12);
+  --warning-soft: rgba(217, 119, 6, 0.14);
+  --danger-soft: rgba(220, 38, 38, 0.12);
 
   color-scheme: light;
 }
@@ -54,6 +64,14 @@
 
   --accent: #60a5fa;
   --accent-soft: rgba(96, 165, 250, 0.16);
+  --accent-2: #a78bfa;
+
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --danger: #f87171;
+  --success-soft: rgba(74, 222, 128, 0.14);
+  --warning-soft: rgba(251, 191, 36, 0.14);
+  --danger-soft: rgba(248, 113, 113, 0.14);
 
   color-scheme: dark;
 }

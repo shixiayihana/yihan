@@ -16,7 +16,8 @@ const links: { to: string; label: string; icon: Component }[] = [
 ]
 
 function isActive(to: string) {
-  return route.path === to
+  // 嵌套路由（如 /projects/xxx）也要让「项目」保持高亮
+  return route.path === to || (to !== '/' && route.path.startsWith(`${to}/`))
 }
 
 // 抽屉打开时锁定背景滚动
