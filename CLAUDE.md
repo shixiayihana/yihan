@@ -5,7 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## 仓库布局
 
 - `frontend/` — Vue 3 应用本体，所有前端代码都在这里
-- `md文档/` — 设计与实现参考：`yihan.md`（视觉规范）、`音乐播放器.md`、`樱花动画参考.md`；改对应区域前先读
+- `docs/` — 设计与实现参考：`yihan.md`（视觉规范）、`音乐播放器.md`、`樱花动画参考.md`、`网站歌单.md`；改对应区域前先读
 - `deploy.sh` — 服务器部署脚本，见「部署」
 
 ## 常用命令
@@ -69,6 +69,10 @@ Vue 3 `<script setup lang="ts">` + Vite 8 + TypeScript + Tailwind CSS v4 + Pinia
 ## 特效
 
 `Snowfall.vue` 是原生 Canvas 2D 粒子系统，没有第三方库：离屏预渲染雪花 sprite + `drawImage`、delta time、边界回收、`devicePixelRatio` 适配、`prefers-reduced-motion` 时停用。雪花颜色随主题切换重建 sprite。修改时保持这些约束。
+
+## 音乐播放器
+
+`MusicPlayer.vue` 不用 iframe，直接用网易云外链音频 `//music.163.com/song/media/outer/url?id={id}.mp3`。歌单在 `src/data/playlist.ts`，默认列表循环。歌单 ID 由站点维护者验证过可用，不要在开发时主动请求验证（会受地区 / 版权限制）。
 
 ## A股分位模块
 
